@@ -169,7 +169,7 @@ font-weight:bold;
 text-decoration: none;
 
 @media screen and (max-width:960px){
-    color: #fff;
+    color: #8F7056;
 }
 
 

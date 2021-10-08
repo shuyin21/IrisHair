@@ -36,17 +36,13 @@ position: relative;
 z-index: 1;
 
  @media screen and (max-width:768px){
-    height: 40vh;
-    
+    height: 78vh;
+    max-width: 100vw;
+    padding:0;
     
 }
 
-/* @media screen and (max-width:1200px){
-    height:70vh;
-} */
-@media screen and (max-width:768px){
-    height:78vh;
-}
+
 :before {
     content:'';
     position: absolute;
