@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import Pback from '../../images/prices-background2.jpg';
+import Pback from '../../images/prices-background2-2.jpg';
 import { HairData, ExtensionData, EyeTreat, Threading } from './PricesData';
 
 const Prices = () => {

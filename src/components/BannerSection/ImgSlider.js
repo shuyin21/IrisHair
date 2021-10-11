@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import slider1 from '../../images/slider1.jpg';
-import slider2 from '../../images/slider2.jpg';
+import slider1 from '../../images/slider1-1.jpg';
+import slider2 from '../../images/slider2-2.jpg';
 import slider3 from '../../images/slider3.jpg';
 import BannerBtn from './BannerBtn';
 
