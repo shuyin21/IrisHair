@@ -9,11 +9,17 @@ import { Link as LinkS } from 'react-scroll';
 
 const Navbar = ({ toggle }) => {
     const [scrollNav, setScrollNav] = useState(false);
+    const [colorChange, setColorChange] = useState('false');
+
 
     const changeNav = () => {
         if (window.scrollY >= 80) {
-            setScrollNav(true)
-        } else { setScrollNav(false) }
+            setScrollNav(true);
+            setColorChange('true')
+        } else {
+            setScrollNav(false);
+            setColorChange('false')
+        }
     }
 
     useEffect(() => {
@@ -28,7 +34,7 @@ const Navbar = ({ toggle }) => {
             <IconContext.Provider value={{ color: '#fff' }}>
                 <Nav scrollNav={scrollNav}>
                     <NavbarContainer>
-                        <NavLogo to='/' onClick={toggleHome}>
+                        <NavLogo to='/' onClick={toggleHome} navscroll={colorChange}>
                             Iris Hair
                         </NavLogo>
                         <MobileIcon onClick={toggle} >
@@ -36,13 +42,18 @@ const Navbar = ({ toggle }) => {
                         </MobileIcon>
                         <NavMenu>
                             <NavItem>
-                                <NavLinks to="about"
+                                <NavLinks
+
+
+                                    to="about"
                                     smooth={true}
                                     duration={500}
                                     spy={true}
                                     exact='true'
                                     offset={-80
                                     }
+                                    navscroll={colorChange}
+
 
                                 >
                                     <span>ABOUT</span>
@@ -56,7 +67,7 @@ const Navbar = ({ toggle }) => {
                                     exact='true'
                                     offset={-80
                                     }
-
+                                    navscroll={colorChange}
                                 >
                                     <span>SERVICES</span>
                                 </NavLinks>
@@ -72,7 +83,7 @@ const Navbar = ({ toggle }) => {
                                     exact='true'
                                     offset={-80
                                     }
-
+                                    navscroll={colorChange}
                                 >
                                     <span>GALLERY</span>
                                 </NavLinks>
@@ -89,7 +100,7 @@ const Navbar = ({ toggle }) => {
                                     exact='true'
                                     offset={-80
                                     }
-
+                                    navscroll={colorChange}
                                 >
                                     <span>REVIEWS</span>
                                 </NavLinks>
@@ -109,7 +120,8 @@ const Navbar = ({ toggle }) => {
                                     spy={true}
                                     exact='true'
                                     offset={-80
-                                    }>
+                                    }
+                                    navscroll={colorChange}>
                                     <span>CONTACT</span>
                                 </NavLinks>
                             </NavItem>
@@ -129,8 +141,8 @@ export default Navbar
 
 const Nav = styled.nav`
 
-background: ${({ scrollNav }) => (scrollNav ? '#fff' : 'transparent')};
-            
+background:${({ scrollNav }) => (scrollNav ? '#fff' : 'transparent')};
+
 height: 80px;
 margin-top: -80px;
 display: flex;
@@ -139,7 +151,9 @@ align-items: center;
 font-size: 1rem;
 position: sticky;
 top:0;
-z-index: 10;
+z-index: 100;
+overflow: auto;
+transition: 0.5s ease-in-out;
 
 @media screen and (max-width:960px){
     transition: 0.8s all ease;
@@ -151,6 +165,7 @@ const NavbarContainer = styled.div`
 display: flex;
 justify-content: space-between;
 height: 80px;
+/* height: ${({ isOpen }) => (isOpen ? '100px' : '50px')}; */
 z-index: 1;
 width: 100%;
 padding: 0 24px;
@@ -158,7 +173,7 @@ max-width:1100px;
 `;
 
 const NavLogo = styled(LinkR)`
-color: ${({ scrollNav }) => (scrollNav ? '#000' : '#fff')};
+color: ${({ navscroll }) => (navscroll === 'true' ? '#222222' : '#fff')};
 justify-self:flex-start;
 cursor: pointer;
 font-size: 1.5rem;
@@ -167,7 +182,7 @@ align-items: center;
 margin-left: 24px;
 font-weight:bold;
 text-decoration: none;
-
+transition: 0.9s ease-in-out;
 @media screen and (max-width:960px){
     color: #8F7056;
 }
@@ -225,12 +240,15 @@ position: relative;
 margin-right:auto;
 margin-left:25px;
 
-
+&.active {
+    span{
+border-bottom: 2px solid #000;}
+}
 
 
     
     span{
-        color: ${({ scrollNav }) => (scrollNav ? '#000' : '#fff')};
+        color: ${({ navscroll }) => (navscroll === 'true' ? '#222222' : '#fff')};
         font-size: 13px;
         font-weight: bold;
         letter-spacing: 1.42px;
@@ -239,6 +257,7 @@ margin-left:25px;
         white-space:nowrap;
         position: relative;
         cursor: pointer;
+        transition: 0.9s ease-in-out;
     
 &:before{
     background-color: #000;
@@ -269,61 +288,61 @@ margin-left:25px;
 }
 `;
 
-const MenuLink = styled(LinkS)`
+// const MenuLink = styled(LinkS)`
 
-align-items: center;
-display: flex;
-flex-flow: row nowrap;
-height: 100%;
-justify-content: flex-end;
-margin: 0px;
-padding: 0px;
-position: relative;
-margin-right:auto;
-margin-left:25px;
-text-decoration: none;
+// align-items: center;
+// display: flex;
+// flex-flow: row nowrap;
+// height: 100%;
+// justify-content: flex-end;
+// margin: 0px;
+// padding: 0px;
+// position: relative;
+// margin-right:auto;
+// margin-left:25px;
+// text-decoration: none;
 
 
 
-    
-    span{
-        color: #000;
-        font-size: 13px;
-        letter-spacing: 1.42px;
-        line-height: 1.08;
-        padding:2px 0px;
-        white-space:nowrap;
-        position: relative;
-        cursor: pointer;
-    
-&:before{
-    background-color: #000;
-    border-radius:0px 0px 4px 4px;
-    bottom: -6px;
-    content:'';
-    height:2px;
-    left:0px;
-    opacity: 0;
-    position: absolute;
-    right:0px;
-    transform-origin: left center;
-    transform: scaleX(0);
-    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    visibility: hidden;
-    width: auto;
-}
 
-}
-&:hover {
-    span:before {
-        transform:scaleX(1);
-        visibility:visible;
-        opacity:1 !important;
-    
-    
-    }
-}
-`;
+//     span{
+//         color: #000;
+//         font-size: 13px;
+//         letter-spacing: 1.42px;
+//         line-height: 1.08;
+//         padding:2px 0px;
+//         white-space:nowrap;
+//         position: relative;
+//         cursor: pointer;
+
+// &:before{
+//     background-color: #000;
+//     border-radius:0px 0px 4px 4px;
+//     bottom: -6px;
+//     content:'';
+//     height:2px;
+//     left:0px;
+//     opacity: 0;
+//     position: absolute;
+//     right:0px;
+//     transform-origin: left center;
+//     transform: scaleX(0);
+//     transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+//     visibility: hidden;
+//     width: auto;
+// }
+
+// }
+// &:hover {
+//     span:before {
+//         transform:scaleX(1);
+//         visibility:visible;
+//         opacity:1 !important;
+
+
+//     }
+// }
+// `;
 
 
 
