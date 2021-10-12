@@ -47,7 +47,7 @@ display: flex;
 justify-content: flex-start ;
 align-items: center;
 @media screen and (max-width:1000px){
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 `;
 

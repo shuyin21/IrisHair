@@ -98,7 +98,7 @@ display: none;
     width: 100%;
     
     opacity: 100%;
-    top: ${({ isOpen }) => (isOpen ? '0px' : '-310px')};
+    top: ${({ isOpen }) => (isOpen ? '0px' : '-400px')};
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;

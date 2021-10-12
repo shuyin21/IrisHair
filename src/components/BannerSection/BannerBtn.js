@@ -1,11 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link as LinkS } from 'react-scroll';
 
 const BannerBtn = () => {
     return (
         <>
             <ButtonWrapper>
-                <Button>
+                <Button to='about'
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact='true'
+                    offset={-80
+                    }>
                     <span>
                         EXPLORE
                     </span>
@@ -33,7 +40,7 @@ top:70vh;
 }
 `;
 
-const Button = styled.div`
+const Button = styled(LinkS)`
 width:100px;
 height:100px;
 border-radius: 50px;

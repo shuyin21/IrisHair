@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link as LinkS } from 'react-scroll';
 import BigImg from '../../images/big-image.jpg';
 import Sm1 from '../../images/sm1.jpg';
 import Sm2 from '../../images/sm2.jpg';
@@ -20,7 +21,14 @@ const About = () => {
                             at an affordable price throughout Central London.
                             Haircuts, hair extensions, bridal hair & beauty, colour, blow dry, highlights, keratin, balayage, threading and more…
                         </span>
-                        <ButtonDiv>VIEW PRICES</ButtonDiv>
+                        <ButtonDiv to='prices'
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact='true'
+                            offset={-80
+                            }
+                        >VIEW PRICES</ButtonDiv>
                     </LeftDiv>
                     <RightDiv>
                         <ImageWrapper>
@@ -115,7 +123,7 @@ font-weight: 100;
 
 
 `;
-const ButtonDiv = styled.div`
+const ButtonDiv = styled(LinkS)`
 width:150px;
 height:50px;
 text-align: center;

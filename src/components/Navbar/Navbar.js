@@ -152,20 +152,21 @@ font-size: 1rem;
 position: sticky;
 top:0;
 z-index: 200;
-overflow: auto;
+overflow: hidden;
 transition: 0.5s ease-in-out;
 
 @media screen and (max-width:960px){
     transition: 0.8s all ease;
     background: #000;
-    height:60px;
+    height:80px;
+    margin-top: -80px;
 }
 `;
 
 const NavbarContainer = styled.div`
 display: flex;
 justify-content: space-between;
-height: 80px;
+height: 60px;
 /* height: ${({ isOpen }) => (isOpen ? '100px' : '50px')}; */
 z-index: 1;
 width: 100%;
@@ -177,12 +178,13 @@ const NavLogo = styled(LinkR)`
 color: ${({ navscroll }) => (navscroll === 'true' ? '#222222' : '#fff')};
 justify-self:flex-start;
 cursor: pointer;
-font-size: 1.5rem;
+font-size: 1.7rem;
 display:flex;
 align-items: center;
 margin-left: 24px;
 font-weight:bold;
 text-decoration: none;
+font-family: 'ovo';
 transition: 0.9s ease-in-out;
 @media screen and (max-width:960px){
     color: #8F7056;
@@ -199,7 +201,7 @@ display: none;
     position: absolute;
     top:0;
     right:0;
-    transform: translate(-100%,40%);
+    transform: translate(-100%,70%);
     font-size: 1.8rem;
     cursor: pointer;
     color: #fff;
@@ -223,7 +225,7 @@ margin-right: -22px;
 `;
 
 const NavItem = styled.li`
-height:80px;
+height:60px;
 
 
 

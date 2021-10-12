@@ -11,7 +11,7 @@ const Prices = () => {
                     <h1>Our services</h1>
                 </BackImage>
                 <PricesWrapper>
-                    <BoxWrapper>
+                    <BoxWrapper id='prices'>
                         <Pbox>
                             <h3>HAIR</h3>
                             {HairData.map((data) => (
