@@ -8,7 +8,7 @@ import { testimonialsOne, testimonialsTwo, testimonialsThree } from './Testimoni
 const Testimonials = () => {
     return (
         <>
-            <TDiv >
+            <TDiv id='reviews' >
                 <TWrapper>
                     <TitleWrapper>
                         <h1>Take their word for it</h1>

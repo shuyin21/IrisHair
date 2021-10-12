@@ -10,7 +10,7 @@ import Sm5 from '../../images/sm5.jpg';
 const About = () => {
     return (
         <>
-            <AboutDiv>
+            <AboutDiv id='about'>
                 <AboutWrapper>
 
                     <LeftDiv>

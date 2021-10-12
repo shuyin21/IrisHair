@@ -151,13 +151,14 @@ align-items: center;
 font-size: 1rem;
 position: sticky;
 top:0;
-z-index: 100;
+z-index: 200;
 overflow: auto;
 transition: 0.5s ease-in-out;
 
 @media screen and (max-width:960px){
     transition: 0.8s all ease;
     background: #000;
+    height:60px;
 }
 `;
 
@@ -198,7 +199,7 @@ display: none;
     position: absolute;
     top:0;
     right:0;
-    transform: translate(-100%,60%);
+    transform: translate(-100%,40%);
     font-size: 1.8rem;
     cursor: pointer;
     color: #fff;

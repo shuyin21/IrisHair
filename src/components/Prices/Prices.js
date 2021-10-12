@@ -6,7 +6,7 @@ import { HairData, ExtensionData, EyeTreat, Threading } from './PricesData';
 const Prices = () => {
     return (
         <>
-            <PricesDiv>
+            <PricesDiv id='services'>
                 <BackImage>
                     <h1>Our services</h1>
                 </BackImage>

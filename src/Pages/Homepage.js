@@ -8,6 +8,7 @@ import Prices from '../components/Prices/Prices';
 import Testimonials from '../components/Testimonials/Testimonials';
 import Location from '../components/Location/Location';
 import Footer from '../components/Footer/Footer';
+import Sidebar from '../components/Sidebar/Sidebar';
 
 const Homepage = () => {
 
@@ -25,6 +26,7 @@ const Homepage = () => {
         <>
 
             <Navbar toggle={toggle} isOpen={isOpen} />
+            <Sidebar toggle={toggle} isOpen={isOpen} />
             <AllWrapper>
                 <Banner />
                 <About />
