@@ -5,6 +5,9 @@ import styled from 'styled-components';
 
 import Navbar from '../components/Navbar/Navbar';
 import Prices from '../components/Prices/Prices';
+import Testimonials from '../components/Testimonials/Testimonials';
+import Location from '../components/Location/Location';
+import Footer from '../components/Footer/Footer';
 
 const Homepage = () => {
 
@@ -26,6 +29,9 @@ const Homepage = () => {
                 <Banner />
                 <About />
                 <Prices />
+                <Testimonials />
+                <Location />
+                <Footer />
             </AllWrapper>
         </>
     )
