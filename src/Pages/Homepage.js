@@ -9,6 +9,7 @@ import Testimonials from '../components/Testimonials/Testimonials';
 import Location from '../components/Location/Location';
 import Footer from '../components/Footer/Footer';
 import Sidebar from '../components/Sidebar/Sidebar';
+import Gallery from '../components/Gallery/Gallery';
 
 const Homepage = () => {
 
@@ -31,6 +32,7 @@ const Homepage = () => {
                 <Banner />
                 <About />
                 <Prices />
+                <Gallery />
                 <Testimonials />
                 <Location />
                 <Footer />
