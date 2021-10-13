@@ -138,6 +138,8 @@ margin-bottom: 50px;
 @media screen and (max-width:768px){
     width: 100%;
     padding:20px 5px;
+    margin-bottom:0;
+    
 }
 
 

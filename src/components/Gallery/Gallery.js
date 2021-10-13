@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
-import slider1 from '../../images/sm1.jpg'
-import slider2 from '../../images/sm2.jpg'
-import slider3 from '../../images/sm3.jpg'
-import slider4 from '../../images/sm4.jpg'
-import slider5 from '../../images/sm5.jpg'
-import slider6 from '../../images/slider1-1.jpg'
+import sl1 from '../../images/GalleryImages/sl1.jpg';
+import sl2 from '../../images/GalleryImages/sl2.jpg';
+import sl3 from '../../images/GalleryImages/sl3.jpg';
+import sl4 from '../../images/GalleryImages/sl4.jpg';
+import sl5 from '../../images/GalleryImages/sl5.jpg';
+import sl6 from '../../images/GalleryImages/sl6.jpg';
+import sl7 from '../../images/GalleryImages/sl7.jpg';
+import sl8 from '../../images/GalleryImages/sl8.jpg';
+import sl9 from '../../images/GalleryImages/sl9.jpg';
+import sl10 from '../../images/GalleryImages/sl10.jpg';
 
 const Gallery = () => {
 
@@ -21,12 +25,12 @@ const Gallery = () => {
             window.removeEventListener("resize", handleResizeWindow);
         };
     }, []);
-    console.log(width);
+
 
     let settings = {
         dots: false,
         infinite: true,
-        speed: 4000,
+        speed: 5000,
         slidesToShow: 3,
         centerMode: true,
         centerPadding: "60px",
@@ -40,7 +44,7 @@ const Gallery = () => {
     let settings2 = {
         dots: false,
         infinite: true,
-        speed: 4000,
+        speed: 5000,
         slidesToShow: 2,
         centerMode: true,
         centerPadding: "60px",
@@ -61,40 +65,60 @@ const Gallery = () => {
 
     return (
         <>
-            <MainDiv>
+            <MainDiv id='gallery'>
                 <CarouselWrapper>
 
                     <Carousel   {...mainSetting}>
 
                         <Wrap>
                             <ImgHolder><ShaderBox></ShaderBox>
-                                <Img src={slider3} />
+                                <Img src={sl1} />
 
                             </ImgHolder>
                         </Wrap>
                         <Wrap>
                             <ImgHolder><ShaderBox></ShaderBox>
-                                <Img src={slider2} />
+                                <Img src={sl2} />
                             </ImgHolder>
                         </Wrap>
                         <Wrap>
                             <ImgHolder><ShaderBox></ShaderBox>
-                                <Img src={slider1} />
+                                <Img src={sl3} />
                             </ImgHolder>
                         </Wrap>
                         <Wrap>
                             <ImgHolder><ShaderBox></ShaderBox>
-                                <Img src={slider4} />
+                                <Img src={sl4} />
                             </ImgHolder>
                         </Wrap>
                         <Wrap>
                             <ImgHolder><ShaderBox></ShaderBox>
-                                <Img src={slider5} />
+                                <Img src={sl5} />
                             </ImgHolder>
                         </Wrap>
                         <Wrap>
                             <ImgHolder><ShaderBox></ShaderBox>
-                                <Img src={slider6} />
+                                <Img src={sl6} />
+                            </ImgHolder>
+                        </Wrap>
+                        <Wrap>
+                            <ImgHolder><ShaderBox></ShaderBox>
+                                <Img src={sl7} />
+                            </ImgHolder>
+                        </Wrap>
+                        <Wrap>
+                            <ImgHolder><ShaderBox></ShaderBox>
+                                <Img src={sl8} />
+                            </ImgHolder>
+                        </Wrap>
+                        <Wrap>
+                            <ImgHolder><ShaderBox></ShaderBox>
+                                <Img src={sl9} />
+                            </ImgHolder>
+                        </Wrap>
+                        <Wrap>
+                            <ImgHolder><ShaderBox></ShaderBox>
+                                <Img src={sl10} />
                             </ImgHolder>
                         </Wrap>
 
@@ -207,7 +231,7 @@ z-index:-1;
 const ShaderBox = styled.div`
 width: 100vw;
   height: 400px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0);
   position: absolute;
   display: flex;
   align-items: flex-end;

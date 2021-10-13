@@ -25,12 +25,7 @@ export const HairData = [{
     itemPrice: '£50+',
     itemDetails: ''
 },
-{
-    id: 5,
-    itemName: '',
-    itemPrice: '£',
-    itemDetails: ''
-},
+
 {
     id: 6,
     itemName: 'ROOT COLOUR',
