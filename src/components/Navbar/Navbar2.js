@@ -7,7 +7,7 @@ import { Link as LinkR } from 'react-router-dom';
 
 
 
-const Navbar2 = ({ toggle }) => {
+const Navbar2 = () => {
     const [scrollNav, setScrollNav] = useState(false);
     const [colorChange, setColorChange] = useState('false');
 

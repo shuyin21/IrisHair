@@ -5,6 +5,8 @@ import { animateScroll as scroll } from 'react-scroll';
 import styled from 'styled-components';
 import { Link as LinkR } from 'react-router-dom';
 import { Link as LinkS } from 'react-scroll';
+// import AppointmentsButton from '../AppointmentsButton/AppointmentsButton';
+
 
 
 const Navbar = ({ toggle }) => {
@@ -12,17 +14,18 @@ const Navbar = ({ toggle }) => {
     const [colorChange, setColorChange] = useState('false');
 
 
-    const changeNav = () => {
-        if (window.scrollY >= 80) {
-            setScrollNav(true);
-            setColorChange('true')
-        } else {
-            setScrollNav(false);
-            setColorChange('false')
-        }
-    }
+
 
     useEffect(() => {
+        const changeNav = () => {
+            if (window.scrollY >= 80) {
+                setScrollNav(true);
+                setColorChange('true')
+            } else {
+                setScrollNav(false);
+                setColorChange('false')
+            }
+        }
         window.addEventListener('scroll', changeNav)
     }, []);
 
@@ -42,6 +45,7 @@ const Navbar = ({ toggle }) => {
                         </MobileIcon>
                         <NavMenu>
                             <NavItem>
+
                                 <NavLinks
 
 
@@ -126,9 +130,17 @@ const Navbar = ({ toggle }) => {
                                 </NavLinks>
                             </NavItem>
                         </NavMenu>
-                        <NavBtn>
-                            <NavBtnLink to={"/appointments"}>Appointments</NavBtnLink>
-                        </NavBtn>
+                        <ButtonWrapper>
+                            <NavBtn>
+                                <NavBtnLink to='appointments'
+                                    smooth={true}
+                                    duration={500}
+                                    spy={true}
+                                    exact='true'
+                                    offset={-80
+                                    } >Appointments</NavBtnLink>
+                            </NavBtn>
+                        </ButtonWrapper>
                     </NavbarContainer>
                 </Nav>
             </IconContext.Provider>
@@ -265,7 +277,7 @@ border-bottom: 2px solid #000;}
 &:before{
     background-color: #000;
     border-radius:0px 0px 4px 4px;
-    bottom: -6px;
+    bottom: -2px;
     content:'';
     height:2px;
     left:0px;
@@ -290,76 +302,23 @@ border-bottom: 2px solid #000;}
     }
 }
 `;
-
-// const MenuLink = styled(LinkS)`
-
-// align-items: center;
-// display: flex;
-// flex-flow: row nowrap;
-// height: 100%;
-// justify-content: flex-end;
-// margin: 0px;
-// padding: 0px;
-// position: relative;
-// margin-right:auto;
-// margin-left:25px;
-// text-decoration: none;
+const ButtonWrapper = styled.div`
+display: flex;
+align-items: center;
 
 
-
-
-//     span{
-//         color: #000;
-//         font-size: 13px;
-//         letter-spacing: 1.42px;
-//         line-height: 1.08;
-//         padding:2px 0px;
-//         white-space:nowrap;
-//         position: relative;
-//         cursor: pointer;
-
-// &:before{
-//     background-color: #000;
-//     border-radius:0px 0px 4px 4px;
-//     bottom: -6px;
-//     content:'';
-//     height:2px;
-//     left:0px;
-//     opacity: 0;
-//     position: absolute;
-//     right:0px;
-//     transform-origin: left center;
-//     transform: scaleX(0);
-//     transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-//     visibility: hidden;
-//     width: auto;
-// }
-
-// }
-// &:hover {
-//     span:before {
-//         transform:scaleX(1);
-//         visibility:visible;
-//         opacity:1 !important;
-
-
-//     }
-// }
-// `;
-
-
-
-
+@media screen and (max-width:960px){
+    display: none;
+}
+`;
 const NavBtn = styled.nav`
 display: flex;
 align-items: center;
 
-@media screen and (max-width: 768px){
-    display:none;
-}
+
 `;
 
-const NavBtnLink = styled(LinkR)`
+const NavBtnLink = styled(LinkS)`
 
 background: #d0a37c;
 white-space: nowrap;
@@ -380,7 +339,5 @@ text-decoration: none;
     
 }
 
-@media screen and (max-width: 960px){
-  display:none;
-}
+
 `;

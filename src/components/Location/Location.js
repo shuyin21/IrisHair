@@ -18,7 +18,7 @@ const Location = () => {
 
 
                     </MapDiv>
-                    <AddressDiv>
+                    <AddressDiv >
                         <h1>IRIS HAIR</h1>
                         <h3>New Station St, Leeds LS1 4DY</h3>
                         <h3>Mon-Sun:<br /> 9am-11pm</h3>
@@ -33,7 +33,7 @@ const Location = () => {
 export default Location
 
 const LocationDiv = styled.div`
-min-height: 700px;
+min-height: 800px;
 margin: 0;
 padding: 5% 0;
 background-color: #fff;

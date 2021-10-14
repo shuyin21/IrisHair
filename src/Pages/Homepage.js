@@ -10,6 +10,7 @@ import Location from '../components/Location/Location';
 import Footer from '../components/Footer/Footer';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Gallery from '../components/Gallery/Gallery';
+import Appointments from '../components/Appointments/Appointments';
 
 const Homepage = () => {
 
@@ -34,8 +35,10 @@ const Homepage = () => {
                 <Prices />
                 <Gallery />
                 <Testimonials />
+                <Appointments />
                 <Location />
                 <Footer />
+
             </AllWrapper>
         </>
     )

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
-import Navbar2 from '../components/Navbar/Navbar2';
+import emailjs from 'emailjs-com';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,17 +8,34 @@ import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 
 const Appointments = () => {
+    const [click, setClick] = useState(true);
 
-    const [isOpen, setIsOpen] = useState(false);
+
+    function buttonClicked() {
+        setClick(true);
+        console.log('clicked' + click);
+    }
+
+
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_fxbc1u6', 'template_o8srhqa', form.current, 'add username').then((result) => {
+            console.log(result.text);
+            setClick(false);
+        }, (error) => {
+            console.log(error.text);
+        });
+        e.target.reset();
+    };
+
     const [startDate, setStartDate] = useState(
         new Date()
 
     );
 
-    const toggle = () => {
-        setIsOpen(!isOpen);
 
-    }
 
 
     const currentDate = new Date();
@@ -34,20 +51,20 @@ const Appointments = () => {
 
     return (
         <>
-            <Navbar2 toggle={toggle} isOpen={isOpen} />
 
-            <ApDiv>
+
+            <ApDiv id='appointments'>
                 <HeaderWrapper>
                     <h1>Please select the desired date and time</h1>
                     <h3>I will get back to you as soon as possible to confirm</h3>
                 </HeaderWrapper>
 
                 <FormWrapper>
-                    <FormDiv>
+                    <FormDiv ref={form} onSubmit={sendEmail}>
                         <FormInput required type='text' name='name' placeholder='Name' />
                         <FormInput required type='email' name='email' placeholder='Email' />
                         <DateDiv>
-                            <DateInput
+                            <DateInput name='date'
                                 selected={startDate}
                                 onChange={(date) => setStartDate(date)}
                                 showTimeSelect
@@ -65,6 +82,10 @@ const Appointments = () => {
 
                     </FormDiv>
                 </FormWrapper>
+                <EmailBox click={click}>
+                    <h1>Email sent successfully</h1>
+                    <button onClick={buttonClicked} >OK</button>
+                </EmailBox>
             </ApDiv>
         </>
     )
@@ -111,7 +132,7 @@ display:flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items:center;
-@media screen and ( min-width:1000px) and (max-width:1300px){
+@media screen and ( min-width:1000px) and (max-width:1600px){
     width: 70%;
 }
 @media screen and (max-width:1000px){
@@ -193,3 +214,30 @@ padding-left:20px;
 margin:10px 0;
  
  `;
+
+const EmailBox = styled.div`
+position:absolute;
+display:${({ click }) => (click === true ? 'none' : 'flex')};
+flex-direction: column;
+background-color:#000;
+color:#fff;
+height:200px;
+width:300px;
+border:2px solid #EF4836;
+border-radius: 10px;
+align-items: center;
+justify-content: center;
+text-align: center;
+font-size: 15px;
+button{
+    margin:10px;
+    padding: 5px 20px;
+    cursor:pointer;
+    border:2px solid #EF4836;
+    background-color:black;
+    color:white;
+    &:hover{
+        background-color:#EF4836 ;
+    }
+}
+`;
