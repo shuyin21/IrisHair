@@ -127,7 +127,7 @@ const Navbar = ({ toggle }) => {
                             </NavItem>
                         </NavMenu>
                         <NavBtn>
-                            <NavBtnLink to={"/booking"}>Appointments</NavBtnLink>
+                            <NavBtnLink to={"/appointments"}>Appointments</NavBtnLink>
                         </NavBtn>
                     </NavbarContainer>
                 </Nav>
