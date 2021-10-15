@@ -49,6 +49,8 @@ const Appointments = () => {
 
 
 
+
+
     return (
         <>
 
@@ -73,6 +75,8 @@ const Appointments = () => {
                                 minTime={setHours(setMinutes(new Date(), 0), 9)}
                                 maxTime={setHours(setMinutes(new Date(), 30), 22)}
                                 dateFormat=" d MMMM, yyyy h:mm aa"
+
+
                             />
                         </DateDiv>
 
@@ -137,6 +141,7 @@ align-items:center;
 }
 @media screen and (max-width:1000px){
     width: 100%;
+    z-index:10;
 }
 
 `;
