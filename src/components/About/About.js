@@ -14,6 +14,8 @@ const About = () => {
             <AboutDiv id='about'>
                 <AboutWrapper>
 
+
+
                     <LeftDiv>
                         <h3>Mobile <br /> Hairdresser in Leeds</h3>
                         <span>
