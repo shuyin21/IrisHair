@@ -10,12 +10,10 @@ import setMinutes from "date-fns/setMinutes";
 const Appointments = () => {
     const [click, setClick] = useState(true);
 
-
     function buttonClicked() {
         setClick(true);
         console.log('clicked' + click);
     }
-
 
     const form = useRef();
     const sendEmail = (e) => {
