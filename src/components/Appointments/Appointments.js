@@ -45,10 +45,6 @@ const Appointments = () => {
         return currentDate.getTime() < selectedDate.getTime();
     };
 
-
-
-
-
     return (
         <>
 
