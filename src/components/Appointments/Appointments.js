@@ -34,8 +34,6 @@ const Appointments = () => {
     );
 
 
-
-
     const currentDate = new Date();
 
     const filterPassedTime = (time) => {
@@ -47,8 +45,6 @@ const Appointments = () => {
 
     return (
         <>
-
-
             <ApDiv id='appointments'>
                 <HeaderWrapper>
                     <h1>Please select the desired date and time</h1>
