@@ -9,7 +9,7 @@ const Footer = () => {
         <>
             <FooterDiv>
 
-                <h3>©{(new Date().getFullYear())} IRIS HAIR </h3>
+                <h3>©{(new Date().getFullYear())} IRIS HAIR</h3>
 
 
             </FooterDiv>
