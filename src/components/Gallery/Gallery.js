@@ -12,9 +12,6 @@ import sl8 from '../../images/GalleryImages/sl8.jpg';
 import sl9 from '../../images/GalleryImages/sl9.jpg';
 import sl10 from '../../images/GalleryImages/sl10.jpg';
 
-
-
-
 const Gallery = () => {
 
     const [width, setWidth] = useState(window.innerWidth);
