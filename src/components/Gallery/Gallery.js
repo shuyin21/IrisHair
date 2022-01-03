@@ -27,8 +27,6 @@ const Gallery = () => {
     }, []);
 
 
-
-
     let settings = {
         dots: false,
         infinite: true,
