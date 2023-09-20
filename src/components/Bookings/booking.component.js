@@ -8,21 +8,27 @@ const BookingComponent = () => {
   const [artistId, setArtistId] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedDayName, setSelectedDayName] = useState("");
+  const [bookingTime, setBookingTime] = useState(null);
 
   const idHandler = (id) => {
-    setArtistId(id);
+    if (artistId != null) {
+      setArtistId(null);
+    } else {
+      setArtistId(id);
+    }
+
     console.log(id);
   };
-  const dateHandler = (dayDate) => {
+
+  const finishBooking = (dayDate, time) => {
     setSelectedDate(dayDate);
     setSelectedDayName(
       dayDate.toLocaleDateString(undefined, { weekday: "long" })
     );
-    console.log(
-      dayDate,
-      dayDate.toLocaleDateString(undefined, { weekday: "long" })
-    );
+    setBookingTime(time);
+    console.log(time);
   };
+
   const filteredArtists = artistData.filter((artist) => artist.id === artistId);
   return (
     <MainWrapper>
@@ -46,7 +52,7 @@ const BookingComponent = () => {
                   data={artist}
                 />
               ))}
-          <DatesAndTime dateHandler={dateHandler} />
+          {artistId != null && <DatesAndTime finishBooking={finishBooking} />}
         </ArtistWrapper>
       </InsideWrapper>
     </MainWrapper>
