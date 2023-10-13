@@ -1,93 +1,74 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { BsFillStarFill } from "react-icons/bs";
 
+const Card = ({ headerTitle, personName, review, stars }) => {
+  const starArray = [1, 2, 3];
+  return (
+    <CardDiv>
+      <StarsDiv>
+        {starArray.map((star) => (
+          <Star key={star} />
+        ))}
+      </StarsDiv>
+      <HeaderTitle>{headerTitle}</HeaderTitle>
+      <Review>{review}</Review>
+      <PersonName>{personName}</PersonName>
+    </CardDiv>
+  );
+};
 
-const Card = ({ headerTitle, personName, img, review }) => {
-    return (
-        <>
-            <CardDiv>
-                <CardHeaderDiv>
-                    <CardTitleWrapper>
-                        <h1>{headerTitle}</h1>
-                        <h3>{personName}</h3>
-                    </CardTitleWrapper>
-
-                </CardHeaderDiv>
-                <CardP>{review}
-                </CardP>
-            </CardDiv>
-        </>
-    )
-}
-
-export default Card
-
+export default Card;
 
 const CardDiv = styled.div`
-width:20% ;
-min-height: 200px;
-border:1px solid;
-background-color: #fff;
-border-color: #060816;
-border-radius: 5px;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-padding: 50px;
-margin:0 10px;
-@media screen and (max-width: 1450px){
-    padding: 30px;
-}
-@media screen and (max-width:1000px){
-    width:70%;
-    padding: 30px;
-    margin-bottom: 20px;
-}
-@media screen and (max-width:768px){
-    width:90%;
-    
-}
+  width: 700px;
+  height: 350px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  margin: 20px;
+  @media screen and (max-width: 1080px) {
+    width: 90%;
+    height: auto;
+  }
 `;
 
-const CardHeaderDiv = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: space-between;
-h1{
-    color: pink;
-    font-size:22px ;
-    max-width: 200px;
-}
-h3{
-    color: #8e2427;
-    font-size: 14px;
-    margin-top: 10px;
-}
-/* @media screen and (max-width: 1200px){
-    flex-direction: column-reverse;
-} */
+const StarsDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  width: 100%;
 `;
 
-const CardTitleWrapper = styled.div`
-display: flex;
-flex-direction: column;
+const Star = styled(BsFillStarFill)`
+  color: #d0a37c;
+  font-size: 3rem;
+  margin: 0 10px;
 `;
 
-// const CardImg = styled.div`
-// width: 100px;
-// height:100px;
-// background-image: url(${props => props.img});
-// background-size: cover;
-// border-radius:50%;
-// @media screen and (max-width:1200px){
-//     width: 70px;
-//     height:70px;
-// }
-// `;
+const HeaderTitle = styled.h2`
+  font-size: 1.5rem;
+  color: #d0a37c;
+`;
 
-const CardP = styled.p`
-color: #000;
-font-weight:200;
-margin-top: 30px;
-line-height: 1.8;
+const Review = styled.p`
+  text-align: center;
+  color: #000;
+  max-width: 80%;
+  font-size: 0.9rem;
+  font-family: "karla", sans-serif;
+  margin-top: 10px;
+`;
+
+const PersonName = styled.span`
+  color: #444;
+  font-weight: 100;
+  font-size: 1rem;
+  margin-top: 10px;
 `;

@@ -12,6 +12,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import Gallery from "../components/Gallery/Gallery";
 import Appointments from "../components/Appointments/Appointments";
 import BookingComponent from "../components/Bookings/booking.component";
+import Brands from "../components/Brands/Brands";
 
 const Homepage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +28,7 @@ const Homepage = () => {
       <AllWrapper>
         <Banner />
         <About />
+        <Brands />
         <Prices />
         <Gallery />
         <Testimonials />
